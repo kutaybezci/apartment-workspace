@@ -36,3 +36,12 @@
 1519930886452:create-person --fullname deli --email deli
 1519934690162:create-person --fullname osman --email deli
 1519939607585:create-person --fullname deneme --email osman
+1520020860292:help create-person
+1520020947878:create-person "KUTAY BEZCI" "kutay.bezci@gmail.com" 5355353535 09.12.1983
+1520021198477:create-person --fullname osman --birth-date 09.12.1983
+1520021423230:help
+1520021426858:exit
+1520021554087:create-person --fullname kutay --birtdate 09.12.1983
+1520021629774:help create-person
+1520021666914:create-person --fullname kutay --birth-date 09.12.1983
+1520030633984:update-person 17 --fullname "Çişli"

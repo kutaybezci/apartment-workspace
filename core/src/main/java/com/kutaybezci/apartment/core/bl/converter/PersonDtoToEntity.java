@@ -1,6 +1,7 @@
 package com.kutaybezci.apartment.core.bl.converter;
 
 import java.sql.Date;
+import java.util.Locale;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.convert.converter.Converter;
@@ -17,7 +18,7 @@ public class PersonDtoToEntity implements Converter<Person, PersonEntity> {
 			personEntity.setBirthDate(new Date(person.getBirthDate().getTime()));
 		}
 		personEntity.setEmail(person.getEmail());
-		personEntity.setFullName(StringUtils.upperCase(person.getFullName()));
+		personEntity.setFullName(StringUtils.upperCase(person.getFullName(), Locale.forLanguageTag("tr-TR")));
 		if (person.getGender() != null) {
 			personEntity.setGender(person.getGender().getCode());
 		}

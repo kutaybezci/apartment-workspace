@@ -68,4 +68,18 @@ public class PersonBoImpl implements PersonBo {
 		return person.getPersonCode();
 	}
 
+	@Transactional
+	public void update(Person person) throws Exception {
+		validate(person);
+		PersonEntity personEntity = conversionService.convert(person, PersonEntity.class);
+		if (personDao.update(personEntity) == 0) {
+			throw new Exception("Person code not found operation failed");
+		}
+	}
+
+	public Person getPersonByCode(String personCode) {
+		PersonEntity personEntity = personDao.query(Long.valueOf(personCode));
+		return conversionService.convert(personEntity, Person.class);
+	}
+
 }
