@@ -26,7 +26,7 @@ public class PersonCommand {
 		person.setEmail(email);
 		person.setPhone(phone);
 		if (!StringUtils.isBlank(birthDate)) {
-			person.setBirthDate(new SimpleDateFormat("DD.MM.YYYY").parse(birthDate));
+			person.setBirthDate(new SimpleDateFormat("dd.MM.yyyy").parse(birthDate));
 		}
 		String personCode = personBo.create(person);
 		return String.format("New person created with id:%s", personCode);
