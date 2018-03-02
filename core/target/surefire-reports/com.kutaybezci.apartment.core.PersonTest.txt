@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.kutaybezci.apartment.core.PersonTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE!
+com.kutaybezci.apartment.core.PersonTest.testValidate()  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.kutaybezci.apartment.core.PersonTest.testValidate(PersonTest.java:49)
+
+com.kutaybezci.apartment.core.PersonTest.testValidateNullPerson()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.kutaybezci.apartment.core.PersonTest.testValidateNullPerson(PersonTest.java:54)
+
+com.kutaybezci.apartment.core.PersonTest.testNullName()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.kutaybezci.apartment.core.PersonTest.testNullName(PersonTest.java:60)
+
+com.kutaybezci.apartment.core.PersonTest.testEmptyName()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.kutaybezci.apartment.core.PersonTest.testEmptyName(PersonTest.java:67)
+

@@ -1,0 +1,10 @@
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/bl/dto/Person.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/dal/impl/PersonDaoImpl.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/bl/validator/PersonValidator.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/bl/converter/PersonDtoToEntity.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/bl/dto/Gender.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/bl/impl/PersonBoImpl.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/CoreConfig.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/dal/PersonDao.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/dal/entity/PersonEntity.java
+/home/kutay/development/apartment-workspace/core/src/main/java/com/kutaybezci/apartment/core/bl/PersonBo.java
