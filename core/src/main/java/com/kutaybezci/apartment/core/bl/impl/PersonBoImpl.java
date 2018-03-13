@@ -1,6 +1,9 @@
 package com.kutaybezci.apartment.core.bl.impl;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
@@ -80,6 +83,13 @@ public class PersonBoImpl implements PersonBo {
 	public Person getPersonByCode(String personCode) {
 		PersonEntity personEntity = personDao.query(Long.valueOf(personCode));
 		return conversionService.convert(personEntity, Person.class);
+	}
+
+	public List<Person> getPersonByName(String partialName) {
+		partialName = StringUtils.upperCase(partialName, Locale.forLanguageTag("tr-TR"));
+		List<PersonEntity> personEntities = personDao.queryName(partialName);
+		return personEntities.stream().map(p -> conversionService.convert(p, Person.class))
+				.collect(Collectors.toList());
 	}
 
 }

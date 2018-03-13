@@ -1,5 +1,7 @@
 package com.kutaybezci.apartment.core.dal.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,6 +21,7 @@ public class PersonDaoImpl implements PersonDao {
 			+ "`active` = ?\n" + "WHERE `person_id` = ?";
 	private static final String SQL_LAST_INSERT_ID = "SELECT LAST_INSERT_ID()";
 	private static final String SQL_SELECT_BY_ID = "select * from person t where t.person_id=?";
+	private static final String SQL_SELECT_BY_NAME = "select * from person t where t.full_name like ?";
 
 	public long insert(PersonEntity person) {
 		jdbcTemplate.update(SQL_INSERT, new Object[] { person.getFullName(), person.getGender(), person.getBirthDate(),
@@ -35,7 +38,12 @@ public class PersonDaoImpl implements PersonDao {
 	}
 
 	public PersonEntity query(long personId) {
-		return jdbcTemplate.queryForObject(SQL_SELECT_BY_ID, new BeanPropertyRowMapper(PersonEntity.class), personId);
+		return (PersonEntity) jdbcTemplate.queryForObject(SQL_SELECT_BY_ID,
+				new BeanPropertyRowMapper(PersonEntity.class), personId);
 	}
 
+	public List<PersonEntity> queryName(String partialName) {
+		partialName = "%".concat(partialName == null ? "" : partialName).concat("%");
+		return jdbcTemplate.query(SQL_SELECT_BY_NAME, new BeanPropertyRowMapper(PersonEntity.class), partialName);
+	}
 }
