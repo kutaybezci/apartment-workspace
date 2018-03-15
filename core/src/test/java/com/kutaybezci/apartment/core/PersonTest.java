@@ -105,7 +105,7 @@ public class PersonTest {
 		validPerson.setFullName("çişli");
 		validPerson.setPhone("ASD123ASD");
 		PersonEntity personEntity = new PersonDtoToEntity().convert(validPerson);
-		assertEquals(personEntity.getFullName(), "ÇIŞLI");
+		assertEquals(personEntity.getFullName(), "ÇİŞLİ");
 		assertEquals(personEntity.getPhone(), "123");
 	}
 
