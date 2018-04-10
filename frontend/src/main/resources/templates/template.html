@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -10,18 +12,25 @@
 
 </head>
 <body>
-	<div class="row bg-primary text-white" th:fragment="header">
+	<div th:fragment="header">
+		<div class="row bg-primary text-white" >
 			<div class="col ">
 				<h1 class="text-center" th:text="#{home.title}">
 					{home.title}
 				</h1>
-			</div>
+			</div>	
 		</div>
+		<!--  <div sec:authorize="isAuthenticated()">
+		
+			<p sec:authentication="name">{header.logged.as}</p>
+		
+		</div>-->
+	</div>
 
-		<div class="row bg-secondary text-white" th:fragment="footer">
-			<footer>
-				<small th:text=#{generic.footer}>{generic.footer}</small>
-			</footer>
-		</div>
+	<div class="row bg-secondary text-white" th:fragment="footer">
+		<footer>
+			<small th:text=#{generic.footer}>{generic.footer}</small>
+		</footer>
+	</div>
 </body>
 </html>

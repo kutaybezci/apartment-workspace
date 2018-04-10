@@ -14,25 +14,26 @@
 <body>
 	<div class="container-fluid bg-light">
 		<div th:replace="template::header">template::header</div>
-		<div class="row">
-			<div class="col">
-				<img class="rounded-circle img-responsive" alt="apartment.jpg"
-					src="img/apartment.jpg" width="300" height="200">
-			</div>
-			<div class="col">
-				<iframe th:src="#{home.map.link}"> width="300" height="200" style="border: 1"></iframe>
-			</div>
+		
+		<div class="alert-danger">
+		<p th:if="${loginError}" th:text="#{login.error}">{login.error}</p>
 		</div>
-		<div class="row">
-			<div class="col text-center">
-				<a class="btn btn-primary" th:href="@{/balance}" th:text="#{home.login}">{home.login}</a>
+		<form th:action="@{/balance}" method="post">
+			<div class="form-group">
+				<div class="form-control">
+					<label th:text="#{login.username}">{login.username}</label>
+					<input type="text" name="username"/>
+				</div>
+				<div class="form-control">
+					<label th:text="#{login.password}"> {login.password}</label>
+					<input type="password" name="password"/> 
+				</div>
+				<div class="form-control">
+					<input type="submit" value="{login.signin}" th:attr="value=#{login.signin}"/> 
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<p class="text-center" th:utext="#{home.address}">
-				home.address
-			</p>
-		</div>
+		</form>
+
 		<div th:replace="template::footer">template::footer</div>
 	</div>
 

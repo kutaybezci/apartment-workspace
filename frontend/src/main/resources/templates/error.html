@@ -11,28 +11,14 @@
 <link rel="stylesheet"
 	href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
-<body>
+ <body th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}">
 	<div class="container-fluid bg-light">
 		<div th:replace="template::header">template::header</div>
-		<div class="row">
-			<div class="col">
-				<img class="rounded-circle img-responsive" alt="apartment.jpg"
-					src="img/apartment.jpg" width="300" height="200">
-			</div>
-			<div class="col">
-				<iframe th:src="#{home.map.link}"> width="300" height="200" style="border: 1"></iframe>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col text-center">
-				<a class="btn btn-primary" th:href="@{/balance}" th:text="#{home.login}">{home.login}</a>
-			</div>
-		</div>
-		<div class="row">
-			<p class="text-center" th:utext="#{home.address}">
-				home.address
-			</p>
-		</div>
+		<div class="alert-danger">
+			<h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+	        <p th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
+        </div>
+        <!--  <a href="index.html" th:href="@{/index.html}">Back to Home Page</a>-->
 		<div th:replace="template::footer">template::footer</div>
 	</div>
 
