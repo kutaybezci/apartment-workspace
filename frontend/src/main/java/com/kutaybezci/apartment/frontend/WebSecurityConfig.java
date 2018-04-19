@@ -15,18 +15,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static final String USER_BY_USER_NAME_SQL = "select u.username,u.password, u.enabled from user u  where u.username=?";
-	private static final String ROLES_BY_USER_NAME_SQL = //
-			/*
-			 * "SELECT \n" + // "    user.username, permission.permission_name\n" + //
-			 * "FROM\n" + // "    user,\n" + // "    role,\n" + // "    user_role,\n" + //
-			 * "    role_permission,\n" + // "    permission\n" + // "WHERE\n" + //
-			 * "    user.username = ?\n" + //
-			 * "        AND user.user_id = user_role.user_id\n" + //
-			 * "        AND user_role.role_id = role.role_id\n" + //
-			 * "        AND user_role.role_id = role_permission.role_id\n" + //
-			 * "        AND role_permission.role_permission_id = permission.permission_id";
-			 */
-			"select u.username, r.role_name from user u, role r, user_role us where us.user_id=u.user_id and us.role_id=r.role_id and u.username=?";
+	private static final String ROLES_BY_USER_NAME_SQL = "select u.username, r.role_name from user u, role r, user_role us where us.user_id=u.user_id and us.role_id=r.role_id and u.username=?";
 	@Autowired
 	DataSource dataSource;
 

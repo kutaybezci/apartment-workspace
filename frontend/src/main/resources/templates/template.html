@@ -22,13 +22,12 @@
 		</div>
 		<div sec:authorize="isAuthenticated()">
 			<div class="row bg-info">
+				<a class="btn btn-success" th:href="@{/menu}" th:text="#{menu}">{menu}</a>
 				<div class="col text-right text-white">
 					<span th:text="#{logged.as}">{logged.as} </span>  <span sec:authentication="name">loggedUserName</span>
 				</div>
 				<form th:action="@{/logout}" method="post">
-						<div class="form-control">
-							<input type="submit" value="{logout}" th:attr="value=#{logout}"/> 
-						</div>
+					<input class="btn btn-danger" type="submit" value="{logout}" th:attr="value=#{logout}"/> 
 				</form>
 			</div>
 		</div>

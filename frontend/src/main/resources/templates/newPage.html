@@ -12,29 +12,10 @@
 	href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-
-
 	<div class="container-fluid bg-light">
 		<div th:replace="template::header">template::header</div>
-		<div class="row">
-			<div class="col">
-				<img class="rounded-circle img-responsive" alt="apartment.jpg"
-					src="img/apartment.jpg" width="300" height="200">
-			</div>
-			<div class="col">
-				<iframe th:src="#{home.map.link}"> width="300" height="200" style="border: 1"></iframe>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col text-center">
-				<a class="btn btn-primary" th:href="@{/menu}" th:text="#{home.login}">{home.login}</a>
-			</div>
-		</div>
-		<div class="row">
-			<p class="text-center" th:utext="#{home.address}">
-				home.address
-			</p>
-		</div>
+		Insert Your code Here
+
 		<div th:replace="template::footer">template::footer</div>
 	</div>
 

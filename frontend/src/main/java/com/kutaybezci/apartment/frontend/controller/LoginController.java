@@ -19,7 +19,6 @@ public class LoginController {
 
 	@RequestMapping("/login-page")
 	public String loginPage() {
-
 		return "";
 	}
 }
