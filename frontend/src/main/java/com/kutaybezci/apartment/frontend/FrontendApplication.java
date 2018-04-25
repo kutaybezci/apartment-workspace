@@ -6,7 +6,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = { "com.kutaybezci.apartment" })
 public class FrontendApplication {
 
 	@Bean
