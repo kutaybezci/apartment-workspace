@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.kutaybezci.apartment.core.bl.converter.PersonDtoToEntity;
 import com.kutaybezci.apartment.core.bl.converter.PersonEntityToDto;
+import com.kutaybezci.apartment.core.bl.converter.UserEntityToDto;
 
 @Configuration
 public class CoreConfig {
@@ -25,6 +26,7 @@ public class CoreConfig {
 		DefaultConversionService service = new DefaultConversionService();
 		service.addConverter(new PersonDtoToEntity());
 		service.addConverter(new PersonEntityToDto());
+		service.addConverter(new UserEntityToDto());
 		return service;
 	}
 
